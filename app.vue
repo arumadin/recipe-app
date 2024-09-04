@@ -6,9 +6,9 @@
     <div class="flex flex-row gap-1 mt-2">
       <UBadge v-for="label in recipe.dishTypes" :label="label" :variant="'subtle'"></UBadge>
     </div>
-    <section class="mt-4 flex flex-col md:flex-row-reverse gap-4 w-full">
+    <section class="mt-4 flex flex-col md:flex-row-reverse gap-8 w-full">
       <NuxtImg :src="recipe.image" :alt="recipe.title" class="object-cover w-full"></NuxtImg>
-      <p class="text-lg max-w-[40ch]" v-html="recipe.summary"></p>
+      <p class="text-lg md:max-w-[40ch]" v-html="recipe.summary"></p>
     </section>
     <div class="flex flex-col md:flex-row gap-2 md:gap-8">
       <section class="py-2 md:py-8 flex-shrink-0">
@@ -30,7 +30,7 @@
         <ol>
           <li v-for="{ number, step } in recipe.analyzedInstructions?.[0].steps" class="flex items-baseline gap-2 mb-4">
             <span class="flex-shrink-0 inline-flex items-center justify-center rounded-full 
-          bg-primary-50 dark:bg-primary-400 dark:bg-opacity-190 text-primary-500 dark:text-primary-400
+          bg-primary-50 dark:bg-primary-400 dark:bg-opacity-190 text-primary-500 dark:text-slate-700
           ring-1 ring-inset ring-primary-500 dark:ring-primary-400 ring-opacity-25 text-xs font-bold h-5 w-5">
               {{ number }}
             </span>
