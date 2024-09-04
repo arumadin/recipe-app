@@ -1,6 +1,6 @@
 <template>
-  <UContainer v-if="recipe">
-    <h1 class="mt-4 font-bold text-xl pt-12">
+  <UContainer v-if="recipe" class="py-12">
+    <h1 class="font-bold text-xl mb-5">
       {{ recipe.title }}
     </h1>
     <div class="flex flex-row gap-1 mt-2">
@@ -26,9 +26,9 @@
         </UTable>
       </section>
       <section class="py-2 md:py-8">
-        <h2 class="text-lg">Steps</h2>
+        <h2 class="text-lg mb-2">Steps</h2>
         <ol>
-          <li v-for="{ number, step } in recipe.analyzedInstructions?.[0].steps" class="flex items-baseline gap-2">
+          <li v-for="{ number, step } in recipe.analyzedInstructions?.[0].steps" class="flex items-baseline gap-2 mb-4">
             <span class="flex-shrink-0 inline-flex items-center justify-center rounded-full 
           bg-primary-50 dark:bg-primary-400 dark:bg-opacity-190 text-primary-500 dark:text-primary-400
           ring-1 ring-inset ring-primary-500 dark:ring-primary-400 ring-opacity-25 text-xs font-bold h-5 w-5">
@@ -44,14 +44,9 @@
       View original recipe on {{ recipe.sourceName }}
     </UButton>
   </UContainer>
-  <!-- header -->
-  <!-- image -->
-  <!-- ingredient  -->
-  <!-- instruction -->
-  <!-- link to og source -->
-  <pre>
-  {{ recipe }}
-</pre>
+  <!-- <pre>
+    {{ recipe }}
+  </pre> -->
 </template>
 
 <script setup lang="ts">
@@ -63,7 +58,7 @@ const { data: recipe } = await useFetch('/api/recipes', {
 
 const columnsToShow: Array<keyof InternalApi['/api/recipes']['get'][number]['extendedIngredients'][number]> = ['name']
 
-const columns = columnsToShow.map(col => ({ key: col, label: col }))
+const columns = columnsToShow.map(col => ({ key: col, label: 'Ingredients', class: "hidden" }))
 const metric = ref(true)
 const unit = computed(() => metric.value ? 'metric' : 'us')
 </script>
