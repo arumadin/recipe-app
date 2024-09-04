@@ -8,6 +8,11 @@ export default defineNuxtConfig({
       apiKey: process.env.NUXT_SPOONACULAR_API_KEY
     }
   },
+  routeRules: {
+    '/**': {
+      isr: 60 * 60 * 24
+    }
+  },
   $development: {
     nitro: {
       storage: {
