@@ -16,6 +16,7 @@
     "vue": "latest"
   },
   "devDependencies": {
-    "@nuxt/ui": "^2.18.4"
+    "@nuxt/ui": "^2.18.4",
+    "@nuxtjs/color-mode": "^3.4.4"
   }
 }
