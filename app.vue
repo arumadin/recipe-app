@@ -3,7 +3,7 @@
     <h1 class="font-bold text-xl mb-5">
       {{ recipe.title }}
     </h1>
-    <div class="flex flex-row gap-1 mt-2">
+    <div class="flex flex-row gap-1 mt-2 flex-wrap">
       <UBadge v-for="label in recipe.dishTypes" :label="label" :variant="'subtle'"></UBadge>
     </div>
     <section class="mt-4 flex flex-col md:flex-row-reverse gap-8 w-full">
